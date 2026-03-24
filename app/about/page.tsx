@@ -9,8 +9,8 @@ const fadeUp = {
 }
 
 const stats = [
-  { value: '40+', label: 'Happy Clients' },
   { value: '100%', label: 'Local Business' },
+  { value: '6', label: 'Team Members' },
   { value: 'P250', label: 'Starting Price' },
   { value: '2hr', label: 'Response Time' },
 ]
@@ -68,12 +68,13 @@ export default function AboutPage() {
               and treats every client like family.
             </p>
             <p className="text-gray-600 leading-relaxed mb-4">
-              We started small, serving a handful of homes in Broadhurst. Word spread fast — because
-              when a cleaner shows up on time and leaves your bathroom spotless, you tell your neighbours.
+              We are a team of six dedicated professionals — trained, vetted, and passionate about
+              delivering spotless results every single time. We believe that a clean space is a
+              happy space, and we take that seriously.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              Today we serve 40+ clients across Gaborone — from busy professionals in Phakalane
-              to Airbnb hosts in the Airport Junction area. We are proudly 100% Botswana-owned and operated.
+              SparkClean is proudly 100% Botswana-owned and operated, serving homes, offices,
+              and rental properties across Gaborone — with plans to expand to Francistown and beyond.
             </p>
           </motion.div>
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }}>
@@ -148,10 +149,14 @@ export default function AboutPage() {
           >
             The Team
           </motion.h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-lg mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
             {[
-              { name: 'T. Mokoena', role: 'Founder & Owner', initial: 'T' },
-              { name: 'L. Kgosimore', role: 'Lead Cleaning Specialist', initial: 'L' },
+              { name: 'Setso Genesis Selemogo', role: 'Founder & Owner', initial: 'S' },
+              { name: 'Joseph Mokoko', role: 'Cleaning Specialist', initial: 'J' },
+              { name: 'Mmetla Sejoe', role: 'Cleaning Specialist', initial: 'M' },
+              { name: 'Ngeje Uezesa', role: 'Cleaning Specialist', initial: 'N' },
+              { name: 'Thero Oageng', role: 'Cleaning Specialist', initial: 'T' },
+              { name: 'Taboka Oagile Sento', role: 'Cleaning Specialist', initial: 'T' },
             ].map(({ name, role, initial }) => (
               <motion.div
                 key={name}

@@ -235,7 +235,7 @@ export default function HomePage() {
             <h2 className="font-heading font-bold text-3xl sm:text-4xl text-white mb-4">
               Ready for a Sparkling Clean Space?
             </h2>
-            <p className="text-blue-100 mb-8 text-lg">Join 40+ happy clients across Gaborone.</p>
+            <p className="text-blue-100 mb-8 text-lg">100% local. Trained team. 2-hour response guarantee.</p>
             <Link
               href="/book"
               className="inline-block bg-white text-[#75AADB] font-heading font-bold px-10 py-4 rounded-xl hover:bg-blue-50 transition-colors text-lg shadow-lg"
