@@ -9,8 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        bw: {
+          blue: "#75AADB",
+          black: "#000000",
+          sand: "#C8A96E",
+          green: "#5C8A3C",
+        },
+      },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+        heading: ["Poppins", "sans-serif"],
       },
     },
   },

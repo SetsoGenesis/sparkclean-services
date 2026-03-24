@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SparkClean Services — Website
 
-## Getting Started
+Professional cleaning service website for SparkClean Services, Gaborone, Botswana.
 
-First, run the development server:
+## Tech Stack
+- **Next.js 14** (App Router) + TypeScript
+- **Tailwind CSS** for styling
+- **Framer Motion** for animations
+- **Supabase** (free tier) — database for bookings, feedback, etc.
+- **Resend** (free tier) — email notifications
+- **Vercel** — deployment (free tier)
 
+---
+
+## Setup Instructions
+
+### 1. Clone & Install
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <your-repo-url>
+cd sparkclean-services
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Set Up Supabase
+1. Go to [supabase.com](https://supabase.com) and create a free account
+2. Create a new project
+3. Go to **SQL Editor** and paste the contents of `supabase/schema.sql` — click **Run**
+4. Go to **Settings > API** and copy:
+   - **Project URL** → `NEXT_PUBLIC_SUPABASE_URL`
+   - **anon/public key** → `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Set Up Resend
+1. Go to [resend.com](https://resend.com) and create a free account
+2. Go to **API Keys** → **Create API Key**
+3. Copy the key → `RESEND_API_KEY`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Configure Environment Variables
+```bash
+cp .env.example .env.local
+```
+Edit `.env.local` and fill in your values:
+```
+NEXT_PUBLIC_SUPABASE_URL=https://xxxx.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
+RESEND_API_KEY=re_xxxxxxxxxxxx
+OWNER_EMAIL=your@email.com
+```
 
-## Learn More
+### 5. Run Locally
+```bash
+npm run dev
+```
+Visit [http://localhost:3000](http://localhost:3000)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy to Vercel
+1. Push your code to GitHub
+2. Go to [vercel.com](https://vercel.com) → **New Project** → Import your repo
+3. Add your environment variables in Vercel project settings:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - `RESEND_API_KEY`
+   - `OWNER_EMAIL`
+4. Click **Deploy** — done!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Customisation Checklist
+- [ ] Replace `+267 XXXX XXXX` with your real phone number throughout the codebase
+- [ ] Update the WhatsApp link `wa.me/267XXXXXXXX` with your real number
+- [ ] Update `hello@sparkclean.co.bw` with your real email
+- [ ] Update `OWNER_EMAIL` in your environment variables
+- [ ] Add your team members' real names and photos to `/app/about/page.tsx`
+- [ ] Add your Facebook and Instagram URLs in `components/Footer.tsx`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Pages
+| Page | URL |
+|------|-----|
+| Home | `/` |
+| Services | `/services` |
+| Book a Clean | `/book` |
+| Schedule a Call | `/call` |
+| Feedback | `/feedback` |
+| About | `/about` |
+| Contact | `/contact` |
+
+---
+
+© 2025 SparkClean Services · Gaborone, Botswana 🇧🇼
