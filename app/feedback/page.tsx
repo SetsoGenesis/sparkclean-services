@@ -20,11 +20,7 @@ const feedbackTypes = [
   { value: 'partnership', label: 'Partnership', icon: Handshake },
 ]
 
-const placeholderReviews = [
-  { name: 'Kabo M.', rating: 5, message: 'SparkClean completely transformed my home. Punctual, thorough, and professional!' },
-  { name: 'Lesego T.', rating: 5, message: 'I use them for my Airbnb and my guests always comment on how clean it is. Reliable every time.' },
-  { name: 'Oratile D.', rating: 5, message: 'The deep clean was exceptional — behind the fridge, inside the oven, everything. Worth every Pula.' },
-]
+const placeholderReviews: Review[] = []
 
 function StarSelector({ value, onChange }: { value?: number; onChange: (v: number) => void }) {
   const [hovered, setHovered] = useState(0)
@@ -197,20 +193,26 @@ export default function FeedbackPage() {
             <h2 className="font-heading font-bold text-3xl text-gray-900 mb-2">Wall of Praise</h2>
             <p className="text-gray-500">Kind words from our Gaborone clients.</p>
           </motion.div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {reviews.map((r, i) => (
-              <motion.div key={i} initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }}
-                className="bg-gray-50 rounded-2xl border border-gray-100 p-6">
-                <div className="flex gap-0.5 mb-3">
-                  {Array.from({ length: r.rating }).map((_, j) => (
-                    <Star key={j} className="w-4 h-4 text-[#C8A96E] fill-[#C8A96E]" />
-                  ))}
-                </div>
-                <p className="text-gray-600 text-sm italic mb-3 leading-relaxed">&ldquo;{r.message}&rdquo;</p>
-                <p className="font-heading font-semibold text-gray-800 text-sm">{r.name}</p>
-              </motion.div>
-            ))}
-          </div>
+          {reviews.length === 0 ? (
+            <div className="text-center py-12 text-gray-400">
+              <p className="text-lg">No reviews yet — be the first! 💙</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {reviews.map((r, i) => (
+                <motion.div key={i} initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }}
+                  className="bg-gray-50 rounded-2xl border border-gray-100 p-6">
+                  <div className="flex gap-0.5 mb-3">
+                    {Array.from({ length: r.rating }).map((_, j) => (
+                      <Star key={j} className="w-4 h-4 text-[#C8A96E] fill-[#C8A96E]" />
+                    ))}
+                  </div>
+                  <p className="text-gray-600 text-sm italic mb-3 leading-relaxed">&ldquo;{r.message}&rdquo;</p>
+                  <p className="font-heading font-semibold text-gray-800 text-sm">{r.name}</p>
+                </motion.div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </div>

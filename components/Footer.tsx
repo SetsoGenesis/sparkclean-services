@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { Sparkles, MessageCircle, Phone, Mail, MapPin } from 'lucide-react'
+import Image from 'next/image'
+import { MessageCircle, Phone, Mail, MapPin } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -8,13 +9,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-1.5 mb-3">
-              <Sparkles className="w-5 h-5 text-[#75AADB]" />
-              <span className="font-heading font-bold text-xl text-white">SparkClean</span>
+            <div className="mb-3">
+              <Link href="/">
+                <Image src="/logo.png" alt="SparkClean Services" width={200} height={98} className="h-14 w-auto object-contain brightness-0 invert" />
+              </Link>
             </div>
-            <p className="text-sm text-gray-400 italic mb-4">
-              Kepe Botswana e Phepafetse<br />
-              <span className="not-italic text-gray-500">Keeping Botswana Clean</span>
+            <p className="text-sm text-gray-400 mb-4">
+              Professional cleaning in Gaborone.<br />
+              <span className="text-gray-500">Expanding to Francistown soon.</span>
             </p>
             <div className="flex gap-3">
               <a href="#" aria-label="Facebook" className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#75AADB] transition-colors">
@@ -83,7 +85,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 pt-6 border-t border-gray-800 text-center text-sm text-gray-500">
-          © 2025 SparkClean Services · Gaborone, Botswana
+          © 2026 SparkClean Services · Gaborone, Botswana 🇧🇼
         </div>
       </div>
     </footer>

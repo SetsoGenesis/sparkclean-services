@@ -12,7 +12,7 @@ const fadeUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 }
 
-const areas = ['Phakalane', 'Block 8', 'Broadhurst', 'Molapo', 'Tlokweng', 'Airport Junction', 'Gaborone West', 'Extension 2', 'and surrounding areas']
+const areas = ['Gaborone and surrounding areas. Expanding to Francistown and other cities soon.']
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false)

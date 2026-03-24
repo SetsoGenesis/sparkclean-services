@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X, Sparkles } from 'lucide-react'
+import Image from 'next/image'
+import { Menu, X } from 'lucide-react'
 
 const links = [
   { href: '/', label: 'Home' },
@@ -32,9 +33,8 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center gap-1.5">
-            <Sparkles className="w-5 h-5 text-[#75AADB]" />
-            <span className="font-heading font-bold text-xl text-[#75AADB]">SparkClean</span>
+          <Link href="/">
+            <Image src="/logo.png" alt="SparkClean Services" width={327} height={160} className="h-[3.5rem] w-auto object-contain" priority />
           </Link>
 
           {/* Desktop nav */}

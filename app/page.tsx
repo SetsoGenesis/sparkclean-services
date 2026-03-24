@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Home, Building2, Layers, Hotel, CheckCircle, Sparkles, ArrowRight, Star } from 'lucide-react'
+import { Home, Building2, Layers, Hotel, CheckCircle, Sparkles, ArrowRight } from 'lucide-react'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -13,26 +13,6 @@ const stagger = {
   show: { transition: { staggerChildren: 0.12 } },
 }
 
-const testimonials = [
-  {
-    name: 'Kabo M.',
-    area: 'Phakalane',
-    stars: 5,
-    quote: 'SparkClean completely transformed my home. The team was punctual, thorough, and so professional. I will never use anyone else!',
-  },
-  {
-    name: 'Lesego T.',
-    area: 'Block 8',
-    stars: 5,
-    quote: 'I use them for my Airbnb and my guests always comment on how clean the place is. Reliable, fast, and worth every Pula.',
-  },
-  {
-    name: 'Oratile D.',
-    area: 'Broadhurst',
-    stars: 5,
-    quote: 'Booked online on a Monday, they were there Tuesday morning. The deep clean was exceptional — behind the fridge, inside the oven, everything.',
-  },
-]
 
 const services = [
   { icon: Home, title: 'Residential Cleaning', price: 'From P250', desc: 'Regular home cleaning done right.', href: '/services' },
@@ -230,39 +210,16 @@ export default function HomePage() {
 
       {/* TESTIMONIALS */}
       <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="font-heading font-bold text-3xl sm:text-4xl text-gray-900 mb-3">What Gaborone Says</h2>
-            <p className="text-gray-500">Real clients. Real results.</p>
-          </motion.div>
-          <motion.div
-            variants={stagger}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
-          >
-            {testimonials.map((t) => (
-              <motion.div
-                key={t.name}
-                variants={fadeUp}
-                className="bg-gray-50 rounded-2xl p-6 border border-gray-100"
-              >
-                <div className="flex gap-0.5 mb-3">
-                  {Array.from({ length: t.stars }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-[#C8A96E] fill-[#C8A96E]" />
-                  ))}
-                </div>
-                <p className="text-gray-700 text-sm leading-relaxed mb-4 italic">&ldquo;{t.quote}&rdquo;</p>
-                <p className="font-heading font-semibold text-gray-900 text-sm">{t.name}</p>
-                <p className="text-gray-400 text-xs">{t.area}, Gaborone</p>
-              </motion.div>
-            ))}
+            <p className="text-gray-500 mb-8">Real clients. Real results.</p>
+            <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+              <p className="text-gray-500 text-lg">Reviews from our clients will appear here.</p>
+              <Link href="/feedback" className="mt-4 inline-block text-[#75AADB] font-semibold hover:underline">
+                Leave the first review →
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
