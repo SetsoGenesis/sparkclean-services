@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
     if (error) throw error
 
     await resend.emails.send({
-      from: 'SparkClean <noreply@sparkclean.co.bw>',
+      from: 'Hyphen Cleaners <noreply@hyphencleaners.co.bw>',
       to: process.env.OWNER_EMAIL!,
       subject: `New Feedback: ${data.feedback_type} from ${data.name || 'Anonymous'}`,
       html: `

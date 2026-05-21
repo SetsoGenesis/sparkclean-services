@@ -88,7 +88,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900">Email</p>
-                  <p className="text-gray-600">hello@sparkclean.co.bw</p>
+                  <p className="text-gray-600">hello@hyphencleaners.co.bw</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">

@@ -3,7 +3,7 @@
 import { MessageCircle } from 'lucide-react'
 
 export default function WhatsAppButton() {
-  const message = encodeURIComponent("Hello SparkClean! I'd like to book a cleaning service.")
+  const message = encodeURIComponent("Hello Hyphen Cleaners! I'd like to book a cleaning service.")
   return (
     <a
       href={`https://wa.me/26776244947?text=${message}`}

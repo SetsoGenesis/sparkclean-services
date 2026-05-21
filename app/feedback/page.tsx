@@ -110,7 +110,7 @@ export default function FeedbackPage() {
                 💙
               </motion.div>
               <h2 className="font-heading font-bold text-xl text-gray-900 mb-2">Thank you!</h2>
-              <p className="text-gray-600">Your feedback helps us grow. — SparkClean Team 💙</p>
+              <p className="text-gray-600">Your feedback helps us grow. — Hyphen Cleaners Team 💙</p>
               <button onClick={() => setSubmitted(false)} className="mt-6 text-[#75AADB] font-medium hover:underline text-sm">
                 Submit another response
               </button>

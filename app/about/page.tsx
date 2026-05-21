@@ -49,7 +49,7 @@ export default function AboutPage() {
         <div className="max-w-3xl mx-auto text-center">
           <motion.div initial="hidden" animate="show" variants={fadeUp}>
             <h1 className="font-heading font-extrabold text-4xl sm:text-5xl text-gray-900 mb-4">
-              About SparkClean
+              About Hyphen Cleaners
             </h1>
             <p className="text-gray-500 text-lg">Proudly local. Built for Gaborone.</p>
           </motion.div>
@@ -62,7 +62,7 @@ export default function AboutPage() {
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }}>
             <h2 className="font-heading font-bold text-3xl text-gray-900 mb-5">Our Story</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              SparkClean was born out of frustration with unreliable cleaning services in Gaborone.
+              Hyphen Cleaners was born out of frustration with unreliable cleaning services in Gaborone.
               Our founder — tired of cancelled appointments and half-done jobs — decided to build
               something better: a cleaning company that actually shows up, does the work thoroughly,
               and treats every client like family.
@@ -73,7 +73,7 @@ export default function AboutPage() {
               happy space, and we take that seriously.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              SparkClean is proudly 100% Botswana-owned and operated, serving homes, offices,
+              Hyphen Cleaners is proudly 100% Botswana-owned and operated, serving homes, offices,
               and rental properties across Gaborone — with plans to expand to Francistown and beyond.
             </p>
           </motion.div>

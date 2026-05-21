@@ -11,7 +11,7 @@ export default function Footer() {
           <div>
             <div className="mb-3">
               <Link href="/">
-                <Image src="/logo.png" alt="SparkClean Services" width={200} height={98} className="h-14 w-auto object-contain brightness-0 invert" />
+                <Image src="/logo.png" alt="Hyphen Cleaners" width={200} height={98} className="h-14 w-auto object-contain brightness-0 invert" />
               </Link>
             </div>
             <p className="text-sm text-gray-400 mb-4">
@@ -73,7 +73,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#75AADB] flex-shrink-0" />
-                <span>hello@sparkclean.co.bw</span>
+                <span>hello@hyphencleaners.co.bw</span>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-[#75AADB] flex-shrink-0 mt-0.5" />
@@ -85,7 +85,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 pt-6 border-t border-gray-800 text-center text-sm text-gray-500">
-          © 2026 SparkClean Services · Gaborone, Botswana 🇧🇼
+          © 2026 Hyphen Cleaners (Pty) Ltd · Gaborone, Botswana 🇧🇼
         </div>
       </div>
     </footer>

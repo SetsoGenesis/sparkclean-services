@@ -66,7 +66,7 @@ export default function HomePage() {
           >
             <div className="flex items-center justify-center gap-2 mb-6">
               <Sparkles className="w-7 h-7 text-[#C8A96E]" />
-              <span className="text-[#C8A96E] font-heading font-semibold text-lg tracking-wide">SparkClean Services</span>
+              <span className="text-[#C8A96E] font-heading font-semibold text-lg tracking-wide">Hyphen Cleaners</span>
             </div>
             <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-4">
               Gaborone&apos;s Most Trusted<br />Cleaning Service

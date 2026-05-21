@@ -5,11 +5,11 @@ import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
 
 export const metadata: Metadata = {
-  title: 'SparkClean Services | Professional Cleaning | Gaborone, Botswana',
+  title: 'Hyphen Cleaners | Professional Cleaning | Gaborone, Botswana',
   description: 'Gaborone\'s most trusted professional cleaning service. Residential, office, deep cleaning and Airbnb turnover. Starting from P250. Re a Gapa — We Deliver.',
   keywords: 'cleaning service Gaborone, house cleaning Botswana, office cleaning, deep cleaning, Airbnb cleaning',
   openGraph: {
-    title: 'SparkClean Services | Gaborone, Botswana',
+    title: 'Hyphen Cleaners | Gaborone, Botswana',
     description: 'Professional. Reliable. Affordable. Re a Gapa — We Deliver.',
     type: 'website',
   },
