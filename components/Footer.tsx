@@ -11,7 +11,7 @@ export default function Footer() {
           <div>
             <div className="mb-3">
               <Link href="/">
-                <Image src="/logo.png" alt="Hyphen Cleaners" width={192} height={128} className="h-16 w-auto object-contain" />
+                <Image src="/logo.png" alt="Hyphen Cleaners" width={220} height={60} className="h-14 w-auto object-contain" />
               </Link>
             </div>
             <p className="text-sm text-gray-400 mb-4">
