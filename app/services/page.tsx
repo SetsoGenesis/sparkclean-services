@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Home, Building2, Layers, Hotel, Check } from 'lucide-react'
+import { Home, Building2, Layers, Trash2, Truck, CalendarCheck, Check } from 'lucide-react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -24,24 +24,34 @@ type QuoteForm = z.infer<typeof quoteSchema>
 
 const services = [
   {
-    icon: Home, title: 'Residential Cleaning', price: 'From P250/session', slug: 'residential',
+    icon: Home, title: 'Residential Cleaning', price: 'P300/session', slug: 'residential',
     desc: 'A thorough, regular clean for your home. We take care of every room so you can focus on what matters.',
-    includes: ['Vacuuming all rooms & hallways', 'Mopping hard floors', 'Dusting surfaces & shelves', 'Bathroom scrubbing & sanitising', 'Kitchen surfaces & sink', 'Trash removal'],
+    includes: ['General house clean', 'Dusting all surfaces & shelves', 'Vacuuming all rooms', 'Kitchen surfaces & sink', 'Bathroom scrubbing & sanitising', 'Trash removal'],
   },
   {
-    icon: Building2, title: 'Office & Commercial Cleaning', price: 'Custom Quote', slug: 'office',
-    desc: 'A clean workspace is a productive workspace. We handle offices, retail spaces, and more.',
-    includes: ['Workstation & desk cleaning', 'Floor vacuuming & mopping', 'Bathroom sanitising', 'Kitchen & breakroom cleaning', 'Window cleaning (interior)', 'Trash & recycling removal'],
-  },
-  {
-    icon: Layers, title: 'Deep Cleaning', price: 'From P500', slug: 'deep_clean',
-    desc: 'The full reset. Perfect for move-in/out, seasonal cleans, or when you need every corner spotless.',
+    icon: Layers, title: 'Deep Cleaning', price: 'P550/session', slug: 'deep_clean',
+    desc: 'Intensive cleaning of all areas including hard-to-reach spaces. The full reset.',
     includes: ['Everything in Residential Clean', 'Inside appliances (fridge, oven, microwave)', 'Behind & under furniture', 'Ceiling fans & light fittings', 'Deep bathroom scrubbing', 'Skirting boards & light switches'],
   },
   {
-    icon: Hotel, title: 'Airbnb & Rental Turnover', price: 'From P300', slug: 'airbnb',
-    desc: 'Keep your guests happy with a spotless property every time. Full reset between every booking.',
-    includes: ['Full property clean & reset', 'Linen changes & bed making', 'Restocking essentials', 'Inspection report after each clean', 'Quick turnaround between guests', 'Consistent quality every visit'],
+    icon: Trash2, title: 'Post-Event Cleaning', price: 'P500/session', slug: 'post_event',
+    desc: 'Waste collection, disposal & quick venue restoration after any event.',
+    includes: ['Full venue waste collection', 'Disposal of all event debris', 'Floor sweeping & mopping', 'Surface wiping & sanitising', 'Quick turnaround', 'Venue restored to original condition'],
+  },
+  {
+    icon: Truck, title: 'Move-in / Move-out', price: 'P450/session', slug: 'move_in_out',
+    desc: 'Full property cleaning before or after moving. Leave it spotless.',
+    includes: ['Complete top-to-bottom clean', 'Inside all cupboards & drawers', 'Deep kitchen & bathroom clean', 'Window cleaning (interior)', 'Wall scuff removal', 'Final inspection walkthrough'],
+  },
+  {
+    icon: Building2, title: 'Office Cleaning', price: 'P1,200/month', slug: 'office',
+    desc: 'Workstation sanitising with flexible scheduling. A clean office is a productive office.',
+    includes: ['Workstation & desk sanitising', 'Floor vacuuming & mopping', 'Bathroom sanitising', 'Kitchen & breakroom cleaning', 'Window cleaning (interior)', 'Trash & recycling removal'],
+  },
+  {
+    icon: CalendarCheck, title: 'Monthly Retainer', price: 'P1,000/month', slug: 'monthly_retainer',
+    desc: 'Four standard cleans per month at a bundled rate. Best value for regular clients.',
+    includes: ['4 standard cleans per month', 'Priority scheduling', 'Same trusted team every visit', 'Consistent quality guaranteed', 'Flexible day & time selection', 'Easy rescheduling if needed'],
   },
 ]
 

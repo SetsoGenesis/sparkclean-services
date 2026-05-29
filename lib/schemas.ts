@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 export const bookingSchema = z.object({
-  service_type: z.enum(['residential', 'deep_clean', 'airbnb', 'office']),
+  service_type: z.enum(['residential', 'deep_clean', 'post_event', 'move_in_out', 'office', 'monthly_retainer']),
   property_size: z.enum(['studio', '1bed', '2bed', '3bed', 'larger']),
   preferred_date: z.string().min(1, 'Please select a date'),
   preferred_time: z.enum(['morning', 'afternoon']),

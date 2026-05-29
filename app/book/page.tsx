@@ -75,9 +75,11 @@ function BookingInner() {
 
   const serviceLabels: Record<BookingFormData['service_type'], string> = {
     residential: 'Residential Cleaning',
-    office: 'Office & Commercial',
     deep_clean: 'Deep Cleaning',
-    airbnb: 'Airbnb & Rental',
+    post_event: 'Post-Event Cleaning',
+    move_in_out: 'Move-in / Move-out',
+    office: 'Office Cleaning',
+    monthly_retainer: 'Monthly Retainer',
   }
   const sizeLabels: Record<BookingFormData['property_size'], string> = {
     studio: 'Studio', '1bed': '1 Bedroom', '2bed': '2 Bedrooms', '3bed': '3 Bedrooms', larger: 'Larger Property',
@@ -135,10 +137,12 @@ function BookingInner() {
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Service Type</label>
                 <select {...register('service_type')} className={inputCls(!!errors.service_type)}>
-                  <option value="residential">Residential Cleaning</option>
-                  <option value="office">Office & Commercial Cleaning</option>
-                  <option value="deep_clean">Deep Cleaning</option>
-                  <option value="airbnb">Airbnb & Rental Turnover</option>
+                  <option value="residential">Residential Cleaning — P300/session</option>
+                  <option value="deep_clean">Deep Cleaning — P550/session</option>
+                  <option value="post_event">Post-Event Cleaning — P500/session</option>
+                  <option value="move_in_out">Move-in / Move-out — P450/session</option>
+                  <option value="office">Office Cleaning — P1,200/month</option>
+                  <option value="monthly_retainer">Monthly Retainer — P1,000/month</option>
                 </select>
               </div>
               <div>
@@ -166,7 +170,7 @@ function BookingInner() {
                 </div>
               </div>
               <div className="bg-[#75AADB]/5 border border-[#75AADB]/20 rounded-xl p-4">
-                <p className="text-sm text-gray-600">Estimated price: <span className="font-heading font-bold text-[#75AADB] text-lg">{formatPrice(price, watchedSize)}</span></p>
+                <p className="text-sm text-gray-600">Estimated price: <span className="font-heading font-bold text-[#75AADB] text-lg">{formatPrice(price, watchedSize, watchedService)}</span></p>
               </div>
               <button type="button" onClick={nextStep}
                 className="w-full bg-[#75AADB] text-white font-heading font-semibold py-3.5 rounded-xl hover:bg-[#5a95cc] transition-colors">
@@ -237,7 +241,7 @@ function BookingInner() {
               </div>
               <div className="bg-[#75AADB]/5 border border-[#75AADB]/20 rounded-xl p-4 text-center">
                 <p className="text-sm text-gray-500 mb-1">Estimated Price</p>
-                <p className="font-heading font-extrabold text-3xl text-[#75AADB]">{formatPrice(price, watchedSize)}</p>
+                <p className="font-heading font-extrabold text-3xl text-[#75AADB]">{formatPrice(price, watchedSize, watchedService)}</p>
                 {watchedService === 'office' && <p className="text-xs text-gray-400 mt-1">We will provide a custom quote after reviewing your space.</p>}
               </div>
               {error && <p className="text-red-500 text-sm">{error}</p>}

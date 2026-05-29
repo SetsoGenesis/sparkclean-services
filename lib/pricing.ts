@@ -1,43 +1,23 @@
-export type ServiceType = 'residential' | 'deep_clean' | 'airbnb' | 'office'
+export type ServiceType = 'residential' | 'deep_clean' | 'post_event' | 'move_in_out' | 'office' | 'monthly_retainer'
 export type PropertySize = 'studio' | '1bed' | '2bed' | '3bed' | 'larger'
 
-const pricingMatrix: Record<ServiceType, Record<PropertySize, number | null>> = {
-  residential: {
-    studio: 200,
-    '1bed': 250,
-    '2bed': 350,
-    '3bed': 450,
-    larger: 600,
-  },
-  deep_clean: {
-    studio: 400,
-    '1bed': 500,
-    '2bed': 650,
-    '3bed': 800,
-    larger: 1000,
-  },
-  airbnb: {
-    studio: 250,
-    '1bed': 300,
-    '2bed': 400,
-    '3bed': 500,
-    larger: 700,
-  },
-  office: {
-    studio: null,
-    '1bed': null,
-    '2bed': null,
-    '3bed': null,
-    larger: null,
-  },
+const flatPrices: Record<ServiceType, number> = {
+  residential: 300,
+  deep_clean: 550,
+  post_event: 500,
+  move_in_out: 450,
+  office: 1200,
+  monthly_retainer: 1000,
 }
 
-export function getEstimatedPrice(service: ServiceType, size: PropertySize): number | null {
-  return pricingMatrix[service]?.[size] ?? null
+const monthlyServices: ServiceType[] = ['office', 'monthly_retainer']
+
+export function getEstimatedPrice(service: ServiceType, _size: PropertySize): number | null {
+  return flatPrices[service] ?? null
 }
 
-export function formatPrice(price: number | null, size: PropertySize): string {
+export function formatPrice(price: number | null, _size: PropertySize, service?: ServiceType): string {
   if (price === null) return 'Custom quote — we will contact you'
-  if (size === 'larger') return `P${price}+`
-  return `P${price}`
+  const suffix = service && monthlyServices.includes(service) ? '/month' : '/session'
+  return `P${price}${suffix}`
 }

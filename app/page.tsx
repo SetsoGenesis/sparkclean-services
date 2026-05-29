@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Home, Building2, Layers, Hotel, CheckCircle, Sparkles, ArrowRight } from 'lucide-react'
+import { Home, Building2, Layers, Trash2, Truck, CalendarCheck, CheckCircle, Sparkles, ArrowRight } from 'lucide-react'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -15,10 +15,12 @@ const stagger = {
 
 
 const services = [
-  { icon: Home, title: 'Residential Cleaning', price: 'From P250', desc: 'Regular home cleaning done right.', href: '/services' },
-  { icon: Building2, title: 'Office & Commercial', price: 'Custom Quotes', desc: 'Keep your workspace spotless.', href: '/services' },
-  { icon: Layers, title: 'Deep Cleaning', price: 'From P500', desc: 'Top to bottom, nothing missed.', href: '/services' },
-  { icon: Hotel, title: 'Airbnb & Rental', price: 'From P300', desc: 'Full reset between every guest.', href: '/services' },
+  { icon: Home, title: 'Residential Cleaning', price: 'P300/session', desc: 'General house clean, dusting, vacuuming, kitchen & bathroom.', href: '/services' },
+  { icon: Layers, title: 'Deep Cleaning', price: 'P550/session', desc: 'Intensive cleaning of all areas including hard-to-reach spaces.', href: '/services' },
+  { icon: Trash2, title: 'Post-Event Cleaning', price: 'P500/session', desc: 'Waste collection, disposal & quick venue restoration.', href: '/services' },
+  { icon: Truck, title: 'Move-in / Move-out', price: 'P450/session', desc: 'Full property cleaning before or after moving.', href: '/services' },
+  { icon: Building2, title: 'Office Cleaning', price: 'P1,200/month', desc: 'Workstation sanitising with flexible scheduling.', href: '/services' },
+  { icon: CalendarCheck, title: 'Monthly Retainer', price: 'P1,000/month', desc: 'Four standard cleans per month at a bundled rate.', href: '/services' },
 ]
 
 const trusts = [
