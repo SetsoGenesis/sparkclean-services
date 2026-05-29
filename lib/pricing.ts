@@ -12,10 +12,12 @@ const flatPrices: Record<ServiceType, number> = {
 
 const monthlyServices: ServiceType[] = ['office', 'monthly_retainer']
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function getEstimatedPrice(service: ServiceType, _size: PropertySize): number | null {
   return flatPrices[service] ?? null
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function formatPrice(price: number | null, _size: PropertySize, service?: ServiceType): string {
   if (price === null) return 'Custom quote — we will contact you'
   const suffix = service && monthlyServices.includes(service) ? '/month' : '/session'
